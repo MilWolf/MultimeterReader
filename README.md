@@ -1,6 +1,6 @@
-#Multimeter reader
+# Multimeter reader
 
-####Log data from multimeters based on the FS9721_LP3 chip.
+#### Log data from multimeters based on the FS9721_LP3 chip.
 
 Create a CSV file with the following columns :
 
