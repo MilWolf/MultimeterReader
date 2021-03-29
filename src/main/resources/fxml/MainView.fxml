@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" alignment="TOP_CENTER" prefWidth="450.0" spacing="50.0"
+      xmlns="http://javafx.com/javafx/8.0.171" fx:controller="com.github.milwolf.mmreader.ui.MainController">
+    <children>
+        <Label style="-fx-font-size: 16px; -fx-font-weight: 800;" text="Multimeter logger"/>
+        <VBox alignment="TOP_CENTER" spacing="20.0">
+            <children>
+                <VBox fx:id="settingsContainer" alignment="TOP_CENTER" spacing="20.0">
+                    <children>
+                        <VBox spacing="5.0">
+                            <children>
+                                <Label text="Port"/>
+                                <HBox spacing="5.0">
+                                    <children>
+                                        <Button fx:id="refreshPortsButton" mnemonicParsing="false"
+                                                onAction="#onActionButtonRefreshPorts" text="Refresh"/>
+                                        <ComboBox fx:id="portsComboBox" maxWidth="1.7976931348623157E308"
+                                                  HBox.hgrow="ALWAYS"/>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                        <VBox spacing="5.0">
+                            <children>
+                                <Label text="Output file"/>
+                                <HBox alignment="CENTER_LEFT" spacing="5.0">
+                                    <children>
+                                        <TextField fx:id="outputFileTextField" editable="false"
+                                                   maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS"/>
+                                        <Button mnemonicParsing="false" onAction="#onActionButtonChooseOutputFile"
+                                                text="..."/>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                    </children>
+                </VBox>
+                <StackPane>
+                    <children>
+                        <Button fx:id="startRecordButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+                                onAction="#onActionButtonStartRecord" text="Start record">
+                            <graphic>
+                                <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../icons/play-sample-blue.png"/>
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <Button fx:id="stopRecordButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+                                onAction="#onActionButtonStopRecord" text="Stop record" visible="false">
+                            <graphic>
+                                <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../icons/close-black.png"/>
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                    </children>
+                </StackPane>
+                <Label fx:id="valueLabel" style="-fx-font-size: 16px;" text="---"/>
+            </children>
+        </VBox>
+    </children>
+    <padding>
+        <Insets bottom="50.0" left="50.0" right="50.0" top="50.0"/>
+    </padding>
+</VBox>
